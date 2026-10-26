@@ -1,0 +1,10 @@
+project: savantenvs/scnlib
+target: scn_fuzz_string_impl
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/scn_fuzz_string_impl/testsuite
+cmds:
+  - cmd: /mayhem/scn_fuzz_string_impl
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/scn_fuzz_string_impl/scn_fuzz_string_impl.dict
+    timeout: 10
